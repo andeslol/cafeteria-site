@@ -1,45 +1,41 @@
-# Empório Café — Landing page
+# Empório Café
 
-Landing page de página única para uma cafeteria de Fortaleza (CE): cardápio em destaque, o espaço, endereços das lojas, galeria do Instagram e atalhos para o delivery no iFood.
+Landing page para uma cafeteria de Fortaleza (CE): destaques do cardápio, o espaço, endereços das lojas, fotos do Instagram e links para pedir no iFood.
 
-> **Aviso:** projeto conceitual de portfólio, não oficial. Marca, nome e fotos pertencem ao Empório Café. Este site não tem vínculo com a empresa.
+> Projeto conceitual de portfólio, não oficial. Marca, nome e fotos pertencem ao Empório Café, e o site não tem vínculo com a empresa.
 
-**Demo:** _em breve_
-
-## Screenshots
-
-| Desktop (1440×900) | Mobile (390×844) |
+| Desktop | Mobile |
 | --- | --- |
 | ![Versão desktop](.github/screenshots/desktop.png) | ![Versão mobile](.github/screenshots/mobile.png) |
 
-## Stack
+## Tecnologias
 
-- HTML5 semântico
-- CSS puro, organizado em módulos (`tokens`, `base`, `components`, uma folha por seção e `motion`)
-- JavaScript vanilla, sem dependências
-- Google Fonts: Fraunces, Figtree e Caveat
-- Imagens em WebP com `width`/`height` definidos
+- HTML, CSS e JavaScript, sem dependências
+- Google Fonts (Fraunces, Figtree e Caveat)
+
+O CSS fica separado por arquivo: `tokens`, `base`, `components`, uma folha para cada seção e `motion`.
 
 ## Funcionalidades
 
-- Layout responsivo, com menu mobile acessível (Esc fecha, `aria-expanded`)
-- Status "Aberto agora / Fechado agora" calculado no fuso de Fortaleza
+- Layout responsivo com menu mobile (fecha com `Esc`)
+- Aviso de "Aberto agora" / "Fechado agora" calculado no horário de Fortaleza
 - Animações de entrada com `IntersectionObserver`, respeitando `prefers-reduced-motion`
-- Botão fixo de pedido no mobile
-- Metadados Open Graph/Twitter, favicon e dados estruturados (JSON-LD)
+- Botão fixo de pedido no celular
+- Open Graph, favicon e dados estruturados (JSON-LD)
 
-## Rodando localmente
+## Rodando
 
-Não há build. Basta abrir o `index.html` no navegador ou servir a pasta:
+Não tem build. Abra o `index.html` no navegador ou sirva a pasta:
 
 ```bash
 npx serve .
-# ou
-python -m http.server 8000
 ```
 
 ## Observações
 
-- O CSS é carregado em vários arquivos `<link>` (sem `@import`), o que facilita a manutenção. Se quiser reduzir requisições em produção, dá para concatenar tudo em um único `style.css` na mesma ordem do `index.html`.
-- Antes de publicar, troque o `og:image` por uma URL absoluta e adicione `og:url` e `canonical` (há um comentário no `<head>` indicando onde).
-- A pasta `_originais/` guarda os arquivos de origem (fotos originais e anotações) e não é versionada.
+- Os arquivos CSS são carregados com vários `<link>`, na ordem certa, sem `@import`. Se quiser menos requisições em produção, dá para juntar tudo num `style.css` seguindo a mesma ordem do `index.html`.
+- Antes de publicar, troque o `og:image` por uma URL absoluta e adicione `og:url` e `canonical` (tem um comentário no `<head>` indicando onde).
+
+## Autor
+
+Anderson Ferreira
