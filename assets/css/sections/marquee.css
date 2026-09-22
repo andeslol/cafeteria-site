@@ -1,0 +1,7 @@
+
+.marquee { background: var(--sage); color: var(--cream); overflow: hidden; padding: 18px 0; }
+.marquee-track { display: flex; width: max-content; animation: marquee 38s linear infinite; }
+.marquee-track span { font-family: var(--f-serif); font-style: italic; font-weight: 400; font-variation-settings: "SOFT" 100, "WONK" 1; font-size: clamp(26px, 3vw, 36px); line-height: 1.1; padding: 0 20px; display: inline-flex; align-items: center; gap: 40px; white-space: nowrap; }
+.marquee-track span::after { content: ""; width: .55em; height: .55em; background: currentColor; opacity: .75; transform: rotate(-30deg); -webkit-mask: var(--bean) center / contain no-repeat; mask: var(--bean) center / contain no-repeat; }
+
+@keyframes marquee { to { transform: translateX(-50%); } }

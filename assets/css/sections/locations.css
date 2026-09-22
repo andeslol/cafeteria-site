@@ -1,0 +1,43 @@
+
+.locations { background: #686D55; color: var(--cream); }
+.locations .eyebrow { color: var(--cream); }
+.locations-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(40px, 6vw, 96px); align-items: start; }
+.locations-intro { position: sticky; top: 120px; }
+.locations h2 { margin: 16px 0 20px; }
+.locations h2 .serif { color: var(--paper); }
+.locations .lead { color: var(--cream); margin: 0; }
+.pin-art { width: clamp(96px, 12vw, 150px); height: auto; margin-top: 40px; color: var(--cream); opacity: .9; }
+
+.loc-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(244, 239, 230, .3); }
+.loc {
+    display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px 24px;
+    padding: 26px 0; border-bottom: 1px solid rgba(244, 239, 230, .3);
+}
+.loc > div:first-child { transition: transform .3s var(--ease); }
+@media (hover: hover) and (pointer: fine) {
+    .loc:hover > div:first-child { transform: translateX(8px); }
+}
+.loc h3 { font-family: var(--f-display); font-weight: 600; font-size: clamp(24px, 2.4vw, 30px); letter-spacing: -.015em; line-height: 1.15; margin: 0 0 4px; }
+.loc p { margin: 0; font-size: 16px; color: var(--cream); opacity: .92; }
+
+.loc-actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.loc-btn {
+    display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: 999px;
+    font-size: 15px; font-weight: 600; white-space: nowrap;
+    background: var(--cream); color: var(--espresso);
+    transition: background-color .25s, color .25s, transform .25s var(--ease);
+}
+.loc-btn svg { width: 16px; height: 16px; }
+.loc-btn:hover { background: var(--espresso); color: var(--cream); transform: translateY(-2px); }
+.loc-btn.alt { background: transparent; color: var(--cream); border: 1.5px solid rgba(244, 239, 230, .6); }
+.loc-btn.alt:hover { background: var(--cream); color: var(--espresso); }
+
+@media (max-width: 900px) {
+    .locations-grid { grid-template-columns: 1fr; }
+    .locations-intro { position: static; }
+    .pin-art { display: none; }
+}
+@media (max-width: 560px) {
+    .loc { grid-template-columns: 1fr; }
+    .loc-actions { justify-content: flex-start; }
+}

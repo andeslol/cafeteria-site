@@ -1,0 +1,55 @@
+
+.moments { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.moment { display: flex; flex-direction: column; }
+.moment-img {
+    position: relative; overflow: hidden; border-radius: var(--radius); aspect-ratio: 3 / 4; background: var(--paper);
+    transition: transform .5s var(--ease), box-shadow .5s var(--ease);
+    isolation: isolate;
+}
+.moment-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--ease); }
+.moment:hover .moment-img img { transform: scale(1.06); }
+
+@media (hover: hover) and (pointer: fine) {
+    .moment:hover .moment-img {
+        transform: rotate(-1.5deg) scale(1.02);
+        box-shadow: 0 20px 40px -16px rgba(33, 22, 16, .3);
+    }
+}
+
+.moment-tag {
+    position: absolute; top: 14px; left: 14px;
+    background: rgba(244, 239, 230, .92); color: var(--ink);
+    font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+    padding: 6px 12px; border-radius: 999px;
+}
+.moment-body { padding: 20px 4px 0; }
+.moment-num { font-family: var(--f-hand); font-weight: 600; color: var(--choco); font-size: 26px; line-height: 1; }
+.moment h3 { font-family: var(--f-display); font-weight: 600; font-size: 27px; letter-spacing: -.02em; line-height: 1.1; margin: 2px 0 8px; }
+.moment p { margin: 0; color: var(--muted); font-size: 15.5px; }
+
+.menu-cta {
+    margin-top: 56px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; padding: 28px 32px; border-radius: var(--radius); background: var(--paper);
+    animation: ctaPulse 3s ease-in-out infinite 2s;
+}
+.menu-cta p { margin: 0; font-family: var(--f-serif); font-style: italic; font-size: clamp(22px, 2.4vw, 28px); line-height: 1.2; }
+
+@media (max-width: 1024px) {
+    .moments { grid-template-columns: repeat(2, 1fr); gap: 32px 20px; }
+}
+@media (max-width: 600px) {
+    .moments {
+        display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px;
+        scroll-padding-inline: var(--gutter);
+        margin: 0 calc(var(--gutter) * -1); padding: 0 var(--gutter) 8px;
+        scrollbar-width: none;
+    }
+    .moments::-webkit-scrollbar { display: none; }
+    .moment { flex: 0 0 78%; scroll-snap-align: start; }
+    .menu-cta { padding: 24px; }
+    .menu-cta .btn { width: 100%; }
+}
+
+@keyframes ctaPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(107, 69, 32, 0); }
+    50% { box-shadow: 0 0 0 6px rgba(107, 69, 32, .08); }
+}

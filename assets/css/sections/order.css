@@ -1,0 +1,45 @@
+
+.order { padding-bottom: clamp(80px, 11vw, 140px); }
+.order-card {
+    background: var(--choco); color: var(--cream); border-radius: 32px;
+    padding: clamp(24px, 6vw, 80px); position: relative; overflow: hidden;
+    display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: center;
+}
+.order-card::before {
+    content: ""; position: absolute; right: -120px; top: -120px; width: 420px; height: 420px; border-radius: 50%;
+    border: 1.5px solid rgba(244, 239, 230, .14); box-shadow: 0 0 0 40px rgba(244, 239, 230, .03), 0 0 0 80px rgba(244, 239, 230, .02);
+    pointer-events: none;
+}
+.order-card > * { min-width: 0; }
+.order-card .eyebrow { color: var(--kraft); }
+.order-card h2 { margin: 16px 0 20px; }
+.order-card h2 .serif { color: var(--kraft); }
+.order-card .lead { color: rgba(244, 239, 230, .75); margin: 0; }
+
+.units { display: grid; gap: 14px; position: relative; }
+.unit {
+    position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 22px 24px; border-radius: 18px; background: rgba(244, 239, 230, .08);
+    border: 1px solid rgba(244, 239, 230, .14);
+    transition: background-color .25s, transform .25s var(--ease);
+}
+.unit:hover { background: var(--cream); color: var(--espresso); transform: translateY(-2px); }
+.unit::before {
+    content: ""; position: absolute; top: 50%; left: -80%; width: 60%; height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(244, 239, 230, .12), transparent);
+    transform: translateY(-50%) skewX(-15deg);
+    transition: left .6s var(--ease);
+}
+.unit:hover::before { left: 130%; }
+.unit small { display: block; font-size: 13px; opacity: .7; letter-spacing: .06em; text-transform: uppercase; }
+.unit strong { font-family: var(--f-display); font-weight: 600; font-size: clamp(26px, 7vw, 32px); letter-spacing: -.02em; line-height: 1.15; }
+.unit .arrow {
+    width: 48px; height: 48px; flex: none; border-radius: 50%; display: grid; place-items: center;
+    background: var(--cream); color: var(--choco); transition: background-color .25s, color .25s;
+}
+.unit:hover .arrow { background: var(--choco); color: var(--cream); }
+.unit .arrow svg { width: 20px; height: 20px; }
+.units-note { font-size: 14px; opacity: .7; margin: 4px 0 0; }
+
+@media (max-width: 900px) { .order-card { grid-template-columns: 1fr; } }
