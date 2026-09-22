@@ -2,6 +2,8 @@
 
 Landing page para uma cafeteria de Fortaleza (CE): destaques do cardápio, o espaço, endereços das lojas, fotos do Instagram e links para pedir no iFood.
 
+Site: https://andersondevbr.github.io/cafeteria-site/
+
 > Projeto conceitual de portfólio, não oficial. Marca, nome e fotos pertencem ao Empório Café, e o site não tem vínculo com a empresa.
 
 | Desktop | Mobile |
